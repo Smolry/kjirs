@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: ./backend
+    ports: ["8000:8000"]
+    environment:
+      DECISION_START_DATE: ${DECISION_START_DATE:-2026-01-01}
+      DECISION_END_DATE: ${DECISION_END_DATE:-2026-01-31}
+      DECISION_CUTOFF: ${DECISION_CUTOFF:-09:20}
+      CORS_ORIGINS: http://localhost:5173
+  frontend:
+    build: ./frontend
+    ports: ["5173:5173"]
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000
+    depends_on: [backend]
