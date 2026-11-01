@@ -95,13 +95,6 @@ frontend/
 docker-compose.yml
 ```
 
-## Deploy (Vercel)
-Create two Vercel projects from this repo:
-
-1. **Backend**: Root Directory `backend`. Vercel detects the FastAPI app at `app/main.py`. Set env var `CORS_ORIGINS` to the frontend's URL. If the first request times out, raise *Max Duration* in Project Settings → Functions.
-2. **Frontend**: Root Directory `frontend` (Vite preset). Set env var `VITE_API_BASE_URL` to the backend's URL.
-
-Then put the frontend URL at the top of this README.
 
 ## AI tools disclosure
-This project was built with AI assistance (Claude by Anthropic) for implementation, tests and documentation. Endpoint parameters were checked against Elexon's published API documentation, and the code was tested as described above.
+This project was built with AI assistance (Claude by Anthropic) for implementation specifically for boiler plate frontend, tests and documentation. Endpoint parameters were checked against Elexon's published API documentation, and the code was tested as described above.
